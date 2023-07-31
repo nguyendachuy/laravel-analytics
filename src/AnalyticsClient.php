@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Analytics;
+namespace NguyenHuy\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Google\Analytics\Data\V1beta\Dimension;
@@ -14,16 +14,19 @@ class AnalyticsClient
 {
     protected int $cacheLifeTimeInMinutes = 0;
 
+    private $service;
+    private $cache;
     public function __construct(
-        protected BetaAnalyticsDataClient $service,
-        protected Repository $cache,
+        BetaAnalyticsDataClient $service,
+        Repository $cache
     ) {
+        $this->service = $service;
+        $this->cache = $cache;
     }
 
     public function setCacheLifeTimeInMinutes(int $cacheLifeTimeInMinutes): self
     {
         $this->cacheLifeTimeInMinutes = $cacheLifeTimeInMinutes * 60;
-
         return $this;
     }
 
@@ -36,7 +39,7 @@ class AnalyticsClient
         array $orderBy = [],
         int $offset = 0,
         FilterExpression $dimensionFilter = null,
-        bool $keepEmptyRows = false,
+        bool $keepEmptyRows = false
     ): Collection {
         $typeCaster = resolve(TypeCaster::class);
 

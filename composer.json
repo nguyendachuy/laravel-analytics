@@ -1,57 +1,47 @@
 {
-    "name": "spatie/laravel-analytics",
-    "description": "A Laravel package to retrieve Google Analytics data.",
+    "name": "nguyendachuy/laravel-analytics",
+    "description": "A Laravel package to retrieve Google Analytics data. Edited to be able to use for lower php versions",
     "keywords": [
-        "spatie",
         "google",
+        "php 7",
         "analytics",
         "retrieve",
         "reports",
-        "laravel"
+        "laravel",
+        "Google Analytics 4"
     ],
-    "homepage": "https://github.com/spatie/laravel-analytics",
+    "homepage": "https://github.com/nguyendachuy/laravel-analytics",
     "license": "MIT",
     "authors": [
         {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "homepage": "https://spatie.be",
+            "name": "Nguyen Dac Huy",
+            "email": "huy.cit@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "google/analytics-data": "^0.9.4",
-        "laravel/framework": "^10.0",
-        "nesbot/carbon": "^2.66",
-        "spatie/laravel-package-tools": "^1.13.7",
-        "symfony/cache": "^6.0"
+        "php": ">=7.0",
+        "google/analytics-data": "^0.9.4"
     },
-    "require-dev": {
-        "league/flysystem": "^3.0",
-        "mockery/mockery": "^1.5",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^2.0",
-        "spatie/ray": "^1.37"
-    },
+    "require-dev": {},
     "autoload": {
         "psr-4": {
-            "Spatie\\Analytics\\": "src"
+            "NguyenHuy\\Analytics\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Analytics\\AnalyticsServiceProvider"
+                "NguyenHuy\\Analytics\\AnalyticsServiceProvider"
             ],
             "aliases": {
-                "Analytics": "Spatie\\Analytics\\Facades\\Analytics"
+                "Analytics": "NguyenHuy\\Analytics\\Facades\\Analytics"
             }
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Analytics\\Tests\\": "tests"
+            "NguyenHuy\\Analytics\\Tests\\": "tests"
         }
     },
     "config": {

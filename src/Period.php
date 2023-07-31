@@ -1,11 +1,11 @@
 <?php
 
-namespace Spatie\Analytics;
+namespace NguyenHuy\Analytics;
 
 use Carbon\Carbon;
 use DateTimeInterface;
 use Google\Analytics\Data\V1beta\DateRange;
-use Spatie\Analytics\Exceptions\InvalidPeriod;
+use NguyenHuy\Analytics\Exceptions\InvalidPeriod;
 
 class Period
 {
@@ -18,7 +18,7 @@ class Period
         return new static($startDate, $endDate);
     }
 
-    public static function days(int $numberOfDays): static
+    public static function days(int $numberOfDays)
     {
         $endDate = Carbon::today();
 
@@ -27,7 +27,7 @@ class Period
         return new static($startDate, $endDate);
     }
 
-    public static function months(int $numberOfMonths): static
+    public static function months(int $numberOfMonths)
     {
         $endDate = Carbon::today();
 
@@ -36,7 +36,7 @@ class Period
         return new static($startDate, $endDate);
     }
 
-    public static function years(int $numberOfYears): static
+    public static function years(int $numberOfYears)
     {
         $endDate = Carbon::today();
 
@@ -56,7 +56,7 @@ class Period
         $this->endDate = $endDate;
     }
 
-    public function toDateRange(): DateRange
+    public function toDateRange()
     {
         return (new DateRange())
             ->setStartDate($this->startDate->format('Y-m-d'))

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Analytics;
+namespace NguyenHuy\Analytics;
 
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Illuminate\Contracts\Cache\Repository;

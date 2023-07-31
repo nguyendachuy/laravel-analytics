@@ -2,18 +2,18 @@
 
 #  Retrieve data from Google Analytics
 
-[![Latest Version](https://img.shields.io/github/release/spatie/laravel-analytics.svg?style=flat-square)](https://github.com/spatie/laravel-analytics/releases)
+[![Latest Version](https://img.shields.io/github/release/nguyendachuy/laravel-analytics.svg?style=flat-square)](https://github.com/nguyendachuy/laravel-analytics/releases)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-![Check & fix styling](https://github.com/spatie/laravel-analytics/workflows/Check%20&%20fix%20styling/badge.svg)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-analytics.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-analytics)
+![Check & fix styling](https://github.com/nguyendachuy/laravel-analytics/workflows/Check%20&%20fix%20styling/badge.svg)
+[![Total Downloads](https://img.shields.io/packagist/dt/nguyendachuy/laravel-analytics.svg?style=flat-square)](https://packagist.org/packages/nguyendachuy/laravel-analytics)
 
 Using this package you can easily retrieve data from Google Analytics.
 
 Here are a few examples of the provided methods:
 
 ```php
-use Spatie\Analytics\Facades\Analytics;
-use Spatie\Analytics\Period;
+use NguyenHuy\Analytics\Facades\Analytics;
+use NguyenHuy\Analytics\Period;
 
 //fetch the most visited pages for today and the past week
 Analytics::fetchMostVisitedPages(Period::days(7));
@@ -24,20 +24,12 @@ Analytics::fetchVisitorsAndPageViews(Period::days(7));
 
 Most methods will return an `\Illuminate\Support\Collection` object containing the results.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-analytics.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-analytics)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
-
 ## Installation
 
 This package can be installed through Composer.
 
 ``` bash
-composer require spatie/laravel-analytics
+composer require nguyendachuy/laravel-analytics
 ```
 
 Optionally, you can publish the config file of this package with this command:
@@ -138,7 +130,7 @@ When the installation is done you can easily retrieve Analytics data. Nearly all
 Here are a few examples using periods
 
 ```php
-use Spatie\Analytics\Facades\Analytics;
+use NguyenHuy\Analytics\Facades\Analytics;
 
 //retrieve visitors and page view data for the current day and the last seven days
 $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
@@ -226,7 +218,7 @@ public function get(Period $period, array $metrics, array $dimensions = [], int 
 
 Here's some extra info on the arguments you can pass:
 
-`Period $period`: a Spatie\Analytics\Period object to indicate that start and end date for your query.
+`Period $period`: a NguyenHuy\Analytics\Period object to indicate that start and end date for your query.
 
 `array $metrics`: an array of metrics to retrieve. You can find a list of all metrics [here](https://developers.google.com/analytics/devguides/reporting/data/v1/api-schema#metrics).
 
@@ -282,18 +274,11 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/nguyendachuy/.github/blob/main/CONTRIBUTING.md) for details.
 
-## Security
-
-If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be) instead of using the issue tracker.
 
 ## Credits
-
-- [Freek Van der Herten](https://github.com/freekmurze)
 - [All Contributors](../../contributors)
-
-And a special thanks to [Caneco](https://twitter.com/caneco) for the logo ✨
 
 ## License
 

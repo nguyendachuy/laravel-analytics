@@ -1,21 +1,13 @@
 <?php
 
-namespace Spatie\Analytics;
+namespace NguyenHuy\Analytics;
 
-use Spatie\Analytics\Exceptions\InvalidConfiguration;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use NguyenHuy\Analytics\Exceptions\InvalidConfiguration;
+use Illuminate\Support\ServiceProvider;
 
-class AnalyticsServiceProvider extends PackageServiceProvider
+class AnalyticsServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
-    {
-        $package
-            ->name('laravel-analytics')
-            ->hasConfigFile();
-    }
-
-    public function bootingPackage()
+    public function boot()
     {
         $this->app->bind(AnalyticsClient::class, function () {
             $analyticsConfig = config('analytics');
