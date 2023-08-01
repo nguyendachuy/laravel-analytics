@@ -12,7 +12,7 @@ use Illuminate\Support\Collection;
 
 class AnalyticsClient
 {
-    protected int $cacheLifeTimeInMinutes = 0;
+    protected $cacheLifeTimeInMinutes = 0;
 
     private $service;
     private $cache;
@@ -89,7 +89,9 @@ class AnalyticsClient
         return $this->cache->remember(
             $cacheName,
             $this->cacheLifeTimeInMinutes,
-            fn () => $this->service->runReport($request),
+            function() use($request){
+                return $this->service->runReport($request);
+            }
         );
     }
 
@@ -108,14 +110,14 @@ class AnalyticsClient
     protected function getFormattedMetrics(array $metrics): array
     {
         return collect($metrics)
-            ->map(fn ($metric) => new Metric(['name' => $metric]))
+            ->map(function($metric){return new Metric(['name' => $metric]);})
             ->toArray();
     }
 
     protected function getFormattedDimensions(array $dimensions): array
     {
         return collect($dimensions)
-            ->map(fn ($dimension) => new Dimension(['name' => $dimension]))
+            ->map(function($dimension){return new Dimension(['name' => $dimension]);})
             ->toArray();
     }
 }

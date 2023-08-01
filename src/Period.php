@@ -9,9 +9,9 @@ use NguyenHuy\Analytics\Exceptions\InvalidPeriod;
 
 class Period
 {
-    public DateTimeInterface $startDate;
+    public $startDate;
 
-    public DateTimeInterface $endDate;
+    public $endDate;
 
     public static function create(DateTimeInterface $startDate, DateTimeInterface $endDate): self
     {

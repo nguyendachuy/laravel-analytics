@@ -13,7 +13,7 @@ class OrderBy
         $dimensionOrderBy = (new DimensionOrderBy())->setDimensionName($dimension);
 
         return (new GoogleOrderBy())->setDimension(
-            $dimensionOrderBy,
+            $dimensionOrderBy
         )->setDesc($descending);
     }
 
@@ -22,7 +22,7 @@ class OrderBy
         $metricOrderBy = (new MetricOrderBy())->setMetricName($metric);
 
         return (new GoogleOrderBy())->setMetric(
-            $metricOrderBy,
+            $metricOrderBy
         )->setDesc($descending);
     }
 }
