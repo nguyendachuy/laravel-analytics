@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Storage;
-use Spatie\Analytics\Exceptions\InvalidConfiguration;
-use Spatie\Analytics\Facades\Analytics;
-use Spatie\Analytics\Period;
+use NguyenHuy\Analytics\Exceptions\InvalidConfiguration;
+use NguyenHuy\Analytics\Facades\Analytics;
+use NguyenHuy\Analytics\Period;
 
 it('will throw an exception if the property id is not set', function () {
     config()->set('analytics.property_id', '');
@@ -25,7 +25,7 @@ it('allows credentials json file', function () {
 
     $analytics = $this->app['laravel-analytics'];
 
-    expect($analytics)->toBeInstanceOf(\Spatie\Analytics\Analytics::class);
+    expect($analytics)->toBeInstanceOf(\NguyenHuy\Analytics\Analytics::class);
 });
 
 it('will throw an exception if the credentials json does not exist', function () {
@@ -43,7 +43,7 @@ it('allows credentials json to be array', function () {
 
     $analytics = $this->app['laravel-analytics'];
 
-    expect($analytics)->toBeInstanceOf(\Spatie\Analytics\Analytics::class);
+    expect($analytics)->toBeInstanceOf(\NguyenHuy\Analytics\Analytics::class);
 });
 
 function credentials(): array

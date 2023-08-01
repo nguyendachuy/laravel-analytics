@@ -1,8 +1,8 @@
 <?php
 
 use Carbon\Carbon;
-use Spatie\Analytics\Exceptions\InvalidPeriod;
-use Spatie\Analytics\Period;
+use NguyenHuy\Analytics\Exceptions\InvalidPeriod;
+use NguyenHuy\Analytics\Period;
 
 it('can create a period for a given amount of days', function () {
     $expectedDate = Carbon::create(2016, 1, 1);

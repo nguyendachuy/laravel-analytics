@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Carbon;
-use Spatie\Analytics\TypeCaster;
+use NguyenHuy\Analytics\TypeCaster;
 
 it('should cast a date to a Carbon object', function () {
     $typeCaster = resolve(TypeCaster::class);

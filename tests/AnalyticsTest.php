@@ -2,10 +2,10 @@
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Spatie\Analytics\Analytics;
-use Spatie\Analytics\AnalyticsClient;
-use Spatie\Analytics\OrderBy;
-use Spatie\Analytics\Period;
+use NguyenHuy\Analytics\Analytics;
+use NguyenHuy\Analytics\AnalyticsClient;
+use NguyenHuy\Analytics\OrderBy;
+use NguyenHuy\Analytics\Period;
 
 beforeEach(function () {
     $this->analyticsClient = Mockery::mock(AnalyticsClient::class);
@@ -19,7 +19,9 @@ beforeEach(function () {
     $this->endDate = Carbon::now();
 });
 
-afterEach(fn () => Mockery::close());
+afterEach(function(){
+    return Mockery::close();
+});
 
 it('can fetch the visitor and page views', function () {
     $period = Period::create($this->startDate, $this->endDate);
@@ -33,7 +35,7 @@ it('can fetch the visitor and page views', function () {
         [],
         0,
         null,
-        false,
+        false
     ];
 
     $this
@@ -73,7 +75,7 @@ it('can fetch the visitor and page views by date', function () {
         ],
         0,
         null,
-        false,
+        false
     ];
 
     $this
@@ -115,7 +117,7 @@ it('can fetch the total visitor and page views', function () {
         ],
         0,
         null,
-        false,
+        false
     ];
 
     $this
@@ -158,7 +160,7 @@ it('can fetch the most visited pages', function () {
         ],
         0,
         null,
-        false,
+        false
     ];
 
     $this
@@ -202,7 +204,7 @@ it('can fetch the top referrers', function () {
         ],
         0,
         null,
-        false,
+        false
     ];
 
     $this
@@ -242,7 +244,7 @@ it('can fetch the top browsers', function () {
         ],
         0,
         null,
-        false,
+        false
     ];
 
     $this

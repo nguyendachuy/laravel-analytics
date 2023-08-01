@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Analytics\Tests\TestSupport;
+namespace NguyenHuy\Analytics\Tests\TestSupport;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Analytics\AnalyticsServiceProvider;
+use NguyenHuy\Analytics\AnalyticsServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

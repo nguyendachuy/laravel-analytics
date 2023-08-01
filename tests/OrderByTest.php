@@ -1,7 +1,7 @@
 <?php
 
 use Google\Analytics\Data\V1beta\OrderBy as GoogleOrderBy;
-use Spatie\Analytics\OrderBy;
+use NguyenHuy\Analytics\OrderBy;
 
 it('should create GoogleOrderBy objects for dimensions', function () {
     $result = OrderBy::dimension('dimension', true);
